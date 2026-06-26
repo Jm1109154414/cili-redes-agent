@@ -1,9 +1,10 @@
 # CiLi - Agente de Redes Sociales (OpenClaw)
 
-Archivos core para el agente de OpenClaw especializado en atención y
-ventas de CiLi (Continuous Improvement and Leadership Institute) por
-WhatsApp, Instagram, Facebook, TikTok y LinkedIn, operando un celular
-Android conectado vía USB a la Mac mini.
+Archivos core para el agente de OpenClaw especializado en atención de
+leads y agendamiento de reuniones para implementaciones de CiLi
+(Continuous Improvement and Leadership Institute) por WhatsApp,
+Instagram, Facebook, TikTok y LinkedIn, operando un celular Android
+conectado vía USB a la Mac mini.
 
 ## Cómo usar
 
@@ -20,11 +21,10 @@ Archivos > Core Files):
 | `TOOLS.md`      | TOOLS                |
 | `HEARTBEAT.md`  | HEARTBEAT            |
 | `MEMORY.md`     | MEMORY               |
+| `GOOGLE_SHEETS_SCHEMA.md` | Referencia operativa |
+| `GOOGLE_SHEETS_HEADERS.csv` | Encabezados para Sheets |
 
 ## Pendiente
 
-- Crear la skill `precios-cili` con la lista real de cursos, precios
-  y promociones vigentes (no incluida aquí por contener info
-  comercial que cambia frecuentemente).
-- Reemplazar `[TU NOMBRE]` en `USER.md` con el operador real.
-- Definir el intervalo real en `HEARTBEAT.md`.
+- Si hace falta, crear una skill con preguntas de calificación,
+  agenda disponible y manejo de objeciones para implementaciones.
