@@ -25,6 +25,7 @@ Archivos > Core Files):
 | `GOOGLE_SHEETS_HEADERS.csv` | Encabezados para Sheets |
 | `RUNBOOK.md` | Procedimiento de operación y pruebas |
 | `TEST_CASES.md` | Conversaciones simuladas para validar |
+| `skills/` | Skills activas del agente |
 
 ## Estado operativo
 
