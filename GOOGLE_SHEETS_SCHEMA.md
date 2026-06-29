@@ -11,25 +11,51 @@ Antes de mandar una landing o confirmar una cita, el lead debe quedar
 registrado en Google Sheets.
 
 ## Columnas recomendadas
+La pestaña principal es `Citas`.
+
+Para no romper la landing/formulario existente, conserva las primeras
+7 columnas actuales y agrega las columnas operativas del agente a la
+derecha.
+
 Usa estas columnas en este orden:
 
-1. Fecha de registro
-2. Hora de registro
-3. Canal
-4. Nombre
-5. Empresa
-6. Cargo o rol
-7. Contacto
-8. Necesidad o proceso a mejorar
-9. Temperatura
-10. Estado
-11. Fecha propuesta
-12. Hora propuesta
-13. Disponibilidad alternativa
-14. Siguiente paso
-15. Responsable
-16. Notas internas
-17. Última actualización
+1. `createdAt`
+2. `date`
+3. `time`
+4. `fullName`
+5. `company`
+6. `phone`
+7. `email`
+8. `canal`
+9. `cargoRol`
+10. `necesidadProceso`
+11. `temperatura`
+12. `estado`
+13. `disponibilidadAlternativa`
+14. `siguientePaso`
+15. `responsable`
+16. `notasInternas`
+17. `ultimaActualizacion`
+
+## Uso de columnas
+
+- `createdAt`: fecha/hora automática de registro.
+- `date`: fecha propuesta o elegida para la cita.
+- `time`: hora propuesta o elegida para la cita.
+- `fullName`: nombre del prospecto.
+- `company`: empresa del prospecto.
+- `phone`: teléfono, si existe.
+- `email`: correo, si existe.
+- `canal`: WhatsApp, Instagram, Facebook, TikTok o LinkedIn.
+- `cargoRol`: cargo, rol o responsabilidad.
+- `necesidadProceso`: proceso, área o problema que quiere mejorar.
+- `temperatura`: frío, tibio o caliente.
+- `estado`: estado comercial/agenda.
+- `disponibilidadAlternativa`: otros horarios o ventanas posibles.
+- `siguientePaso`: acción concreta pendiente.
+- `responsable`: Jose Miguel o equipo asignado.
+- `notasInternas`: resumen breve, sin conversación completa.
+- `ultimaActualizacion`: fecha/hora del último cambio.
 
 ## Valores permitidos
 
@@ -81,7 +107,8 @@ No guardes:
 - información técnica interna
 
 ## Ejemplo
-`2026-06-26 | 12:40 | Instagram | Laura Pérez | Empresa ABC |
-Operaciones | @laura | reducir retrabajos | tibio | cita propuesta |
-2026-06-27 | 16:00 | mañana o tarde | confirmar disponibilidad |
-Jose Miguel | pidió información de implementaciones | 2026-06-26 12:40`
+`2026-06-26T22:07:41.197Z | 2026-06-29 | 11:00 | Laura Pérez |
+Empresa ABC | 8440000000 | laura@example.com | Instagram |
+Operaciones | reducir retrabajos | tibio | cita propuesta |
+mañana o tarde | confirmar disponibilidad | Jose Miguel |
+pidió información de implementaciones | 2026-06-26 12:40`

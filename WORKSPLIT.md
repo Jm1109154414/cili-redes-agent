@@ -14,22 +14,25 @@ equipo de CiLi.
 - La hoja de agenda/leads ya está definida en `USER.md`.
 - La estructura de columnas está en `GOOGLE_SHEETS_SCHEMA.md`.
 - La plantilla rápida de encabezados está en `GOOGLE_SHEETS_HEADERS.csv`.
+- La cuenta de servicio de Google Sheets ya puede leer y escribir en
+  la hoja.
+- La pestaña principal confirmada es `Citas`.
+- La hoja conserva sus 7 columnas originales y agrega columnas
+  operativas del agente a la derecha.
 
-## Bloqueo operativo actual
+## Estado de Google Sheets
 
-Desde este entorno no hay cuenta de Google autenticada en `gog`, por
-eso no se pudo escribir directamente en la hoja.
+El bloqueo inicial de autenticación de Google Sheets quedó resuelto.
+La hoja puede leerse y modificarse desde el agente usando la cuenta de
+servicio configurada.
 
-Para acomodar la hoja real, una persona con acceso a Google debe:
+Estructura actual de `Citas`:
 
-1. Abrir la hoja:
-   https://docs.google.com/spreadsheets/d/10QTy20aau6Zvb0jIn7XIeKY2PJZn9hvlXgqvIvv-cwk/edit?usp=drivesdk
-2. Crear o usar una pestaña principal para agenda/leads.
-3. Pegar la fila de encabezados de `GOOGLE_SHEETS_HEADERS.csv`.
-4. Confirmar que los estados y temperaturas coincidan con
-   `GOOGLE_SHEETS_SCHEMA.md`.
-5. Avisar si la hoja tiene nombres de pestañas, validaciones o
-   columnas distintas.
+`createdAt,date,time,fullName,company,phone,email,canal,cargoRol,necesidadProceso,temperatura,estado,disponibilidadAlternativa,siguientePaso,responsable,notasInternas,ultimaActualizacion`
+
+Pendiente: registrar un lead de prueba real y validar que el agente
+pueda actualizar estado, siguiente paso y notas internas sin romper la
+landing/formulario que escribe en las primeras 7 columnas.
 
 ## División de trabajo
 
@@ -90,11 +93,11 @@ Debe incluir:
 
 Prioridad: alta.
 
-### 2. `calificacion-leads-cili`
+### 2. `calificacion-agenda-cili`
 
 Para qué sirve:
-Calificar prospectos sin hacer un interrogatorio y decidir si conviene
-llevarlos a cita.
+Calificar prospectos sin hacer un interrogatorio y avanzar hacia cita
+cuando exista intención real.
 
 Debe incluir:
 
@@ -106,50 +109,13 @@ Debe incluir:
 - datos mínimos antes de agenda
 - criterios de descarte amable
 - cuándo avanzar aunque falten datos
-
-Prioridad: alta.
-
-### 3. `agenda-citas-cili`
-
-Para qué sirve:
-Guiar al prospecto hacia una cita, pedir disponibilidad, registrar en
-Google Sheets y manejar conflictos de horario.
-
-Debe incluir:
-
 - cómo pedir disponibilidad
-- cómo proponer reunión
-- cómo registrar en Google Sheets
-- cómo revisar conflicto de horario
-- cuándo usar `cita propuesta`
-- cuándo usar `cita aceptada pendiente de horario`
-- cuándo usar `cita agendada`
-- cuándo mandar la landing
-- qué hacer si Sheets falla
-- cuándo avisar por Instagram a Jose Miguel
+- cuándo usar landing
+- cuándo escalar agenda real
 
 Prioridad: alta.
 
-### 4. `objeciones-implementaciones-cili`
-
-Para qué sirve:
-Responder objeciones frecuentes sin perder el CTA de agenda.
-
-Debe incluir respuestas para:
-
-- "mándame información"
-- "cuánto cuesta"
-- "lo reviso después"
-- "no tengo tiempo"
-- "ya tenemos sistema"
-- "no sé si aplica para mi empresa"
-- "quiero una propuesta"
-- "háblame con alguien"
-- "solo estoy investigando"
-
-Prioridad: alta.
-
-### 5. `google-sheets-agenda-cili`
+### 3. `sheets-agenda-cili`
 
 Para qué sirve:
 Operar la hoja como CRM/calendario de pruebas.
@@ -169,22 +135,67 @@ Debe incluir:
 
 Prioridad: alta.
 
-### 6. `seguimiento-leads-cili`
+### 4. `objeciones-seguimiento-cili`
 
 Para qué sirve:
-Dar seguimiento a leads sin parecer spam y sin perder oportunidades.
+Responder objeciones frecuentes y dar seguimiento sin perder el CTA de
+agenda.
 
-Debe incluir:
+Debe incluir respuestas para:
 
+- "mándame información"
+- "cuánto cuesta"
+- "lo reviso después"
+- "no tengo tiempo"
+- "ya tenemos sistema"
+- "no sé si aplica para mi empresa"
+- "quiero una propuesta"
+- "háblame con alguien"
+- "solo estoy investigando"
 - seguimiento después de 30 minutos
 - seguimiento a 24 horas
 - seguimiento a 48 horas
 - seguimiento después de mandar landing
-- seguimiento si aceptó cita pero no dio horario
 - cierre amable si no responde
-- cuándo dejar de insistir
 
-Prioridad: media-alta.
+Prioridad: alta.
+
+### 5. `canales-redes-cili`
+
+Para qué sirve:
+Adaptar el tono por WhatsApp, Instagram, Facebook, TikTok y LinkedIn.
+
+Debe incluir:
+
+- estilo por canal
+- longitud recomendada
+- primera respuesta por canal
+- CTA por canal
+- seguimiento por canal
+- cuándo sonar más casual
+- cuándo sonar más ejecutivo
+
+Prioridad: media.
+
+### 6. `adb-redes-cili`
+
+Para qué sirve:
+Operar el celular Android por ADB/accesibilidad para revisar y
+responder mensajes en las apps permitidas.
+
+Debe incluir:
+
+- prechecks de ADB
+- celular desbloqueado y pantalla activa
+- paquetes de apps esperados
+- flujo para abrir inbox por canal
+- lectura segura de conversación
+- redacción y envío
+- regreso al inbox
+- manejo de pantalla bloqueada, sesión vencida o app no disponible
+- límites de herramientas permitidas
+
+Prioridad: alta.
 
 ### 7. `seguridad-redes-cili`
 
@@ -205,33 +216,15 @@ Debe incluir:
 
 Prioridad: alta.
 
-### 8. `mensajes-por-canal-cili`
-
-Para qué sirve:
-Adaptar el tono por WhatsApp, Instagram, Facebook, TikTok y LinkedIn.
-
-Debe incluir:
-
-- estilo por canal
-- longitud recomendada
-- primer respuesta por canal
-- CTA por canal
-- seguimiento por canal
-- cuándo sonar más casual
-- cuándo sonar más ejecutivo
-
-Prioridad: media.
-
 ## Orden recomendado de creación
 
 1. `implementaciones-cili`
-2. `calificacion-leads-cili`
-3. `agenda-citas-cili`
-4. `objeciones-implementaciones-cili`
-5. `google-sheets-agenda-cili`
-6. `seguimiento-leads-cili`
+2. `calificacion-agenda-cili`
+3. `sheets-agenda-cili`
+4. `objeciones-seguimiento-cili`
+5. `canales-redes-cili`
+6. `adb-redes-cili`
 7. `seguridad-redes-cili`
-8. `mensajes-por-canal-cili`
 
 ## Definición de listo
 
@@ -245,3 +238,4 @@ El agente queda listo para pruebas completas cuando:
 - Los avisos internos por Instagram funcionan.
 - Se hizo al menos una prueba de conversación completa hasta cita
   propuesta o cita aceptada.
+- Se probó al menos un flujo ADB real por Instagram o WhatsApp.
