@@ -25,6 +25,9 @@ Archivos > Core Files):
 | `GOOGLE_SHEETS_HEADERS.csv` | Encabezados para Sheets |
 | `META_INSTAGRAM_INTEGRATION.md` | Referencia de integración Meta/Instagram |
 | `WEBHOOK_PUBLIC_SETUP.md` | Arquitectura recomendada para exponer webhooks |
+| `META_APPROVAL_DAY_CHECKLIST.md` | Pasos del día de aprobación de Meta |
+| `AGENT_FIRST_ARCHITECTURE.md` | Arquitectura objetivo: el agente piensa, n8n ejecuta |
+| `WORKFLOW_MIGRATION_TO_AGENT_FIRST.md` | Corte del blueprint viejo al flujo agent-first |
 | `RUNBOOK.md` | Procedimiento de operación y pruebas |
 | `TEST_CASES.md` | Conversaciones simuladas para validar |
 | `skills/` | Skills activas del agente |
