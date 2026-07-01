@@ -1,1 +1,1 @@
-createdAt,date,time,fullName,company,phone,email,canal,cargoRol,necesidadProceso,temperatura,estado,disponibilidadAlternativa,siguientePaso,responsable,notasInternas,ultimaActualizacion
+createdAt,date,time,fullName,company,phone,email,canal,cargoRol,necesidadProceso,temperatura,estado,disponibilidadAlternativa,siguientePaso,responsable,notasInternas,ultimaActualizacion,externalLeadId,instagramUsername,origenCuenta,lastInboundAt,lastOutboundAt,lastInboundMessage,lastInboundMessageAt,lastOutboundMessage,lastOutboundMessageAt,conversationSummary,technicalStatus

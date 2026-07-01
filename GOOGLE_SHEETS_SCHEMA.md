@@ -36,6 +36,17 @@ Usa estas columnas en este orden:
 15. `responsable`
 16. `notasInternas`
 17. `ultimaActualizacion`
+18. `externalLeadId`
+19. `instagramUsername`
+20. `origenCuenta`
+21. `lastInboundAt`
+22. `lastOutboundAt`
+23. `lastInboundMessage`
+24. `lastInboundMessageAt`
+25. `lastOutboundMessage`
+26. `lastOutboundMessageAt`
+27. `conversationSummary`
+28. `technicalStatus`
 
 ## Uso de columnas
 
@@ -56,6 +67,17 @@ Usa estas columnas en este orden:
 - `responsable`: Jose Miguel o equipo asignado.
 - `notasInternas`: resumen breve, sin conversación completa.
 - `ultimaActualizacion`: fecha/hora del último cambio.
+- `externalLeadId`: id externo del lead en el canal origen. Usalo como llave operativa principal.
+- `instagramUsername`: usuario de Instagram como referencia operativa secundaria.
+- `origenCuenta`: cuenta origen o perfil por donde entró el lead.
+- `lastInboundAt`: fecha/hora del último mensaje recibido.
+- `lastOutboundAt`: fecha/hora de la última respuesta enviada o propuesta.
+- `lastInboundMessage`: último mensaje recibido guardado.
+- `lastInboundMessageAt`: fecha/hora del último mensaje recibido guardado.
+- `lastOutboundMessage`: última respuesta propuesta o enviada.
+- `lastOutboundMessageAt`: fecha/hora de la última respuesta propuesta o enviada.
+- `conversationSummary`: resumen corto acumulado de la conversación.
+- `technicalStatus`: rastro corto del estado técnico del flujo.
 
 ## Valores permitidos
 
@@ -94,6 +116,23 @@ Si el horario parece ocupado:
 - pide otra disponibilidad o escala a humano
 - registra el estado como `seguimiento pendiente` o `escalado a
   humano`, según el caso
+
+## EventosBot
+La pestaña `EventosBot` conviene tenerla con estos headers:
+
+- `timestamp`
+- `externalLeadId`
+- `messageId`
+- `canal`
+- `direccion`
+- `mensaje`
+- `intent`
+- `temperatura`
+- `estado`
+- `n8nExecutionId`
+- `sendStatus`
+
+Usa `messageId` para deduplicar reintentos del webhook de Instagram.
 
 ## Privacidad
 No guardes:

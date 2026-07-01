@@ -23,6 +23,7 @@ Archivos > Core Files):
 | `MEMORY.md`     | MEMORY               |
 | `GOOGLE_SHEETS_SCHEMA.md` | Referencia operativa |
 | `GOOGLE_SHEETS_HEADERS.csv` | Encabezados para Sheets |
+| `META_INSTAGRAM_INTEGRATION.md` | Referencia de integración Meta/Instagram |
 | `RUNBOOK.md` | Procedimiento de operación y pruebas |
 | `TEST_CASES.md` | Conversaciones simuladas para validar |
 | `skills/` | Skills activas del agente |
